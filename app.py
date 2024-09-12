@@ -2,11 +2,13 @@ from flask import Flask, request, jsonify
 import pandas as pd
 import numpy as np
 import joblib
+import os
 
 app = Flask(__name__)
 
 # Load the trained model
-model = joblib.load('productivity_model.joblib')
+model_path = os.environ.get('MODEL_PATH', 'productivity_model.joblib')
+model = joblib.load(model_path)
 
 # Define category and priority encoders
 categories = ['Work', 'Personal', 'Study', 'Health', 'Social']
@@ -40,5 +42,10 @@ def predict():
     
     return jsonify(response)
 
+@app.route('/health', methods=['GET'])
+def health_check():
+    return jsonify({"status": "healthy"}), 200
+
 if __name__ == '__main__':
-    app.run(debug=True)
+    port = int(os.environ.get('PORT', 5000))
+    app.run(host='0.0.0.0', port=port)
