@@ -1,4 +1,4 @@
-# ToBee_Task_Recommendations-model
+# ToBee_Task_Recommendation-model
 ## Productivity Task Predictor
 
 This project implements a machine learning model to predict the likelihood of completing tasks based on various features. It includes a trained Random Forest Classifier model and a Flask API to serve predictions.
