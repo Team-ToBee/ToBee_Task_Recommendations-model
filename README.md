@@ -73,15 +73,7 @@ The model was trained on synthetic data generated to simulate task completion pa
 
 For details on the model training process, refer to the original script in the repository.
 
-## Deployment
 
-This project is configured for easy deployment on Railway. Follow these steps to deploy:
-
-1. Fork this repository to your GitHub account.
-2. Create a new project on Railway and connect it to your GitHub repository.
-3. Railway will automatically detect the Python environment and install dependencies.
-4. Set up the necessary environment variables in Railway's dashboard.
-5. Deploy the application.
 
 ## Contributing
 
